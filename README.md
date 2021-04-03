@@ -4,6 +4,7 @@
 
 Dokładna specyfikacja zadania jest opisana w pliku *problem_statement.md*
 
+### Opis działania
 
 Informacje o wierszach reprezentujemy w elementach typu *line*,
 które przetrzymujemy w dynamicznej tablicy. \
@@ -31,4 +32,11 @@ wypisujemy wynik.
  * sort.h - funkcje porównujące i sortujące elementy różnych
      typów: liczby, elementy typu string, elementy typu *line* oraz
      wektory liczb nieujemnych (grupy podobnych wierszy).
+    
+### Użytkowanie
+
+* Sprawdzamy czy nie występują błedy kompilacji wykonując: *./scripts/test_compilation.sh*
+* Będąc w głównym katalogu wykonujemy pogram make. 
+* Testujemy program wykonując *./scripts/test.sh similar_lines tests*
+* Wykonujemy make clean 
 
