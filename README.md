@@ -1,42 +1,40 @@
-# IPP_Podobne_wiersze
+# IPP similar lines
 
-## Implementacja programu wyszukującego w tekście grupy wierszy podobnych.
+## Program searching for groups of similar lines in a text.
 
-Dokładna specyfikacja zadania jest opisana w pliku *problem_statement.md*
+### [Exact specification of the task](https://github.com/SzymonLukasik/IPP_similar_lines/blob/master/PROBLEM_STATEMENT.md)
 
-### Opis działania
+<hr>
 
-Informacje o wierszach reprezentujemy w elementach typu *line*,
-które przetrzymujemy w dynamicznej tablicy. \
-W czasie linearytmicznym względem wielkości wejścia porządkujemy
-zawartość każdego wiersza oraz sortujemy wektor elementów typu *line*. \
-Dzięki temu w czasie liniowym względem wielkości danych jesteśmy w stanie
-dokonać podziału posortowanych wierszy na grupy wierszy podobnych. \
-Następnie porządkujemy wektor grup zgodnie z poleceniem treści i
-wypisujemy wynik.
+## Implementation's overview
 
-### Struktura programu
+- Informations about lines are represented in objects of type *line*,
+which are kept in a dynamic array. \
+- In a log-linear time with respect to the size of the input we sort words in each line and then we sort the vector of *line* objects.
+- As a result, we are able to partition sorted lines into groups of similar lines in the linear time.
+- Then, we sort vector of obtained groups with respect to the specification of the task and print out the answer.
 
-   Program similar_lines korzysta z siedmiu bibliotek udostępniających:   
- * safealloc.h - funkcje alokujące pamięć, które zwracają exit(1)
-     w przypadku niepowodzenia.
- * vector.h - polimorficzne tablice dynamiczne służące
-     do obsługi danych wejściowych i wynikowych.
- * lines.h - strukturę *line*, obsługę wektorów elementów
-      typu *line*, wczytywanie wierszy i ich konwersję do *line*.
- * parsing.h - zamianę słów na typy liczbowe.
- * groups.h - obługę wyniku w reprezentowanego w postaci
-     wektorów wektorów liczb nieujemnych i jego wypisywanie
- * solve.h - funkcję, która dokonuje utworzenia podziału
-     posortowanych wierszy na grupy wierszy podobnych.
- * sort.h - funkcje porównujące i sortujące elementy różnych
-     typów: liczby, elementy typu string, elementy typu *line* oraz
-     wektory liczb nieujemnych (grupy podobnych wierszy).
-    
-### Użytkowanie
+## Program's structure
 
-* Sprawdzamy czy nie występują błedy kompilacji wykonując: *./scripts/test_compilation.sh*
-* Będąc w głównym katalogu wykonujemy pogram make. 
-* Testujemy program wykonując *./scripts/test.sh similar_lines tests*
-* Wykonujemy make clean 
+Program similar_lines is using seven libraries that provides:
 
+- safealloc.h - functions that allocate memory and in case of failure, terminate program abnormally.
+- vector.h - <b>polimorphic dynamic </b> arrays.
+- lines.h - *line* type, handling of vector of *line* objejcts, reading input and conversing it  to *line* objects.
+- parsing.h - conversion of words to numerical types
+- groups.h - handling of result represented as vector of vectors of unsigned integers (identifiers of lines partitioned into groups)
+and printing it out
+- solve.h - function that creates the partition of sorted lines into similar groups
+- sorth.h - functions that compare and sort objects of various types:
+  - numbers
+  - strings
+  - *line* objects
+  - vectors of unsigned integers (representing groups of similar lines)
+
+## Usage
+
+Commands should be executed from root of the repository. 
+- Check for compilation errors with <code>./scripts/compilation_test.sh</code>
+- Create the executable with <code> make </code>
+- Test the program with <code> ./scripts/test.sh similar_lines tests </code>
+- Clean the repository with <code> make clean </code>
