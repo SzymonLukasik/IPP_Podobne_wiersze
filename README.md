@@ -4,8 +4,6 @@
 
 ### [Exact specification of the task](https://github.com/SzymonLukasik/IPP_similar_lines/blob/master/PROBLEM_STATEMENT.md)
 
-<hr>
-
 ## Implementation's overview
 
 - Informations about lines are represented in objects of type *line*,

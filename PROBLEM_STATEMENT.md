@@ -2,8 +2,6 @@
 
 ## Create a program searching for groups of similar lines in a text.
 
-<hr>
-
 ## Definitions
 
 ###  Line
